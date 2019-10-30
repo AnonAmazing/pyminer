@@ -76,7 +76,7 @@ class BitcoinRPC:
 		return self.rpc('getwork', data)
 
 def uint32(x):
-	return x & 0xffffffffL
+	return x & 0xffffffff
 
 def bytereverse(x):
 	return uint32(( ((x) << 24) | (((x) << 8) & 0x00ff0000) |
@@ -208,7 +208,7 @@ def miner_thread(id):
 
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
-		print "Usage: pyminer.py CONFIG-FILE"
+		print ("Usage: pyminer.py CONFIG-FILE")
 		sys.exit(1)
 
 	f = open(sys.argv[1])
