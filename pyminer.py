@@ -61,12 +61,12 @@ class BitcoinRPC:
 		body = resp.read()
 		resp_obj = json.loads(body)
 		if resp_obj is None:
-			print "JSON-RPC: cannot JSON-decode body"
+			print ("JSON-RPC: cannot JSON-decode body")
 			return None
 		if 'error' in resp_obj and resp_obj['error'] != None:
 			return resp_obj['error']
 		if 'result' not in resp_obj:
-			print "JSON-RPC: no result in object"
+			print ("JSON-RPC: no result in object")
 			return None
 
 		return resp_obj['result']
