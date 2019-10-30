@@ -55,7 +55,7 @@ class BitcoinRPC:
 
 		resp = self.conn.getresponse()
 		if resp is None:
-			print "JSON-RPC: no response"
+			print ("JSON-RPC: no response")
 			return None
 
 		body = resp.read()
